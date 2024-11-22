@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add custom styles here */
+@font-face {
+  font-family: 'Proxima Nova Regular';
+  src: url('./assets/fonts/ProximaNova-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'BeautyDemo';
+  src: url('./assets/fonts/BeautyDemo.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Cardillac-Regular';
+  src: url('./assets/fonts/Cardillac-Regular.ttf') format('opentype');
+}
