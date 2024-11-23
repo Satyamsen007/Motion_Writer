@@ -8,11 +8,43 @@ import { KeyboardArrowDown } from '@mui/icons-material';
 
 function Header() {
   const [isHovered, setIsHovered] = useState(false); // Hover state for "Services"
-  const [navColor, setnavColor] = useState("transparent");
+  const [navColor, setNavColor] = useState('transparent');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      setIsDarkMode(true);
+    } else if (savedTheme === 'light') {
+      document.documentElement.classList.remove('dark');
+      setIsDarkMode(false);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setIsDarkMode(prefersDark);
+      if (prefersDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  }, [isDarkMode, setIsDarkMode]);
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    if (isDarkMode) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
+
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
     padding: 7,
+    transition: 'transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease', // Smooth transition for the switch
     '& .MuiSwitch-switchBase': {
       margin: 1,
       padding: 0,
@@ -28,6 +60,7 @@ function Header() {
         '& + .MuiSwitch-track': {
           opacity: 1,
           backgroundColor: '#aab4be',
+          transition: 'background-color 0.3s ease', // Smooth background color transition
         },
       },
     },
@@ -35,6 +68,7 @@ function Header() {
       backgroundColor: navColor === 'transparent' ? '#4583B4' : 'white',
       width: 32,
       height: 32,
+      transition: 'background-color 0.3s ease, transform 0.3s ease', // Smooth transition for thumb color and position
       '&::before': {
         content: "''",
         position: 'absolute',
@@ -53,20 +87,25 @@ function Header() {
       opacity: 1,
       backgroundColor: '#aab4be',
       borderRadius: 20 / 2,
+      transition: 'background-color 0.3s ease', // Smooth track background color transition
     },
   }));
+
   const listenScrollEvent = () => {
-    window.scrollY > 20 ? setnavColor("primary") : setnavColor("transparent");
+    window.scrollY > 20 ? setNavColor('primary') : setNavColor('transparent');
   };
+
   useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent);
+    window.addEventListener('scroll', listenScrollEvent);
+
     return () => {
-      window.removeEventListener("scroll", listenScrollEvent);
+      window.removeEventListener('scroll', listenScrollEvent);
     };
   }, []);
+
   return (
     <div
-      className={`z-50 w-full flex gap-14 justify-between items-center fixed right-0 top-0 bg-${navColor} duration-500 opacity-80 box-border`}
+      className={`z-50 w-full flex gap-14 justify-between items-center fixed right-0 top-0 bg-${navColor} duration-500 opacity-80 box-border transition-all`}
     >
       <div className="flex items-center w-[180px] h-[90px] overflow-hidden">
         <img
@@ -136,7 +175,7 @@ function Header() {
         <div>
           <FormGroup>
             <FormControlLabel
-              control={<MaterialUISwitch defaultChecked={false} />}
+              control={<MaterialUISwitch defaultChecked={isDarkMode} onClick={toggleTheme} />}
             />
           </FormGroup>
         </div>

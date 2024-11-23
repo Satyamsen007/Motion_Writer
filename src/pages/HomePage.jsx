@@ -3,55 +3,64 @@ import SwiperSlider from '../components/SwiperSlider';
 import { motion } from 'framer-motion';
 import { Circle } from '@mui/icons-material';
 import ServiceCard from '../components/ServiceCard';
-
+import WebHelmet from '../utils/WebHelmet.jsx'
 function HomePage() {
   const serviceCards = [
     {
-      icon: './src/assets/images/digital marketing.png',
+      icon1: './src/assets/images/ICON_BLUE/digital marketing.png',
+      icon2: './src/assets/images/ICON_WHITE/digital marketing.png',
       title: 'Digital Marketing',
-      description: '"Empowering brands with innovative digital marketing strategies that drive engagement and achieve impactful results. Your success is our mission."'
+      description: "Driving growth with powerful digital strategies.Motion Writer transforms your online presence into success.Engage, convert, and build lasting relationships.Elevating brands with targeted digital marketing solutions."
     },
     {
-      icon: './src/assets/images/creative designing.png',
+      icon1: './src/assets/images/ICON_BLUE/creative designing.png',
+      icon2: './src/assets/images/ICON_WHITE/creative designing.png',
       title: 'Creative Designing',
-      description: '"Transforming ideas into visually stunning designs that captivate audiences and elevate brands. Creativity meets purpose in every detail."'
+      description: "Transforming ideas into stunning visuals that captivate. Motion Writer designs with purpose, creativity, and passion.Every design tells your brand’s unique story.Bringing your vision to life through innovation and artistry."
     },
     {
-      icon: './src/assets/images/social.png',
+      icon1: './src/assets/images/ICON_BLUE/social.png',
+      icon2: './src/assets/images/ICON_WHITE/social.png',
       title: 'Social',
-      description: '"Connecting brands with audiences through innovative strategies and engaging content. Building relationships, one post at a time."'
+      description: "Building communities, one post at a time.Motion Writer connects your brand to its audience.Engage, inspire, and create lasting social connections.Elevating your brand’s voice on every platform."
     },
     {
-      icon: './src/assets/images/web solution.png',
+      icon1: './src/assets/images/ICON_BLUE/web solution.png',
+      icon2: './src/assets/images/ICON_WHITE/web solution.png',
       title: 'Web Solutions',
-      description: '"Crafting seamless digital experiences through innovative web design and development. Your online success, our priority."'
+      description: "Transforming ideas into seamless digital experiences.Motion Writer crafts websites that deliver results.Innovative designs, flawless functionality, and user-first solutions.Your brand’s online success starts with us."
     },
     {
-      icon: './src/assets/images/films.png',
+      icon1: './src/assets/images/ICON_BLUE/films.png',
+      icon2: './src/assets/images/ICON_WHITE/films.png',
       title: 'Films',
-      description: '"Bringing stories to life with captivating visuals and creative storytelling. Films that inspire, engage, and leave a lasting impact."'
+      description: "Bringing stories to life through powerful visuals.Motion Writer creates films that captivate and inspire.Crafting narratives that engage and leave lasting impressions.Where creativity meets storytelling to elevate your brand."
     },
     {
-      icon: './src/assets/images/photography.png',
+      icon1: './src/assets/images/ICON_BLUE/photography.png',
+      icon2: './src/assets/images/ICON_WHITE/photography.png',
       title: 'Photography',
-      description: '"Capturing moments with precision and artistry, transforming memories into timeless visuals that tell your unique story."'
+      description: "Capturing moments with precision and artistry.Transforming memories into timeless visuals.Every shot tells your brand’s unique story.Photography that speaks louder than words, every time."
     }
   ];
 
   return (
     <>
+      <WebHelmet title={'Best Creative Agency Of Kolkata'} favicon={'/favIcon/MOTION_WRITTER_LOGO 02.ico'} />
       <SwiperSlider />
-      <div className="py-[100px] w-full">
-        <div className="mx-[120px]">
-          <div className='w-full bg-gradient-to-r from-white via-[#4583B4] to-white mb-6 py-1'>
-            <h1 className="font-PrimaryFont text-[1.8vmax] uppercase font-extrabold text-center text-whiteColor">
-              Who We Are?
-            </h1>
+      <div className="w-full">
+        <div>
+          <div className="w-full bg-[url('./src/assets/images/WhoWeAreBg.png')] bg-cover bg-center bg-no-repeat grid grid-cols-[1fr_1fr] justify-items-center items-center px-20">
+            <div>
+              <img src="./src/assets/images/WhoWeArePeople.png" alt="Who We Are People" />
+            </div>
+            <div className='font-PrimaryFont mb-44 pr-14'>
+              <h1 className='text-[1.8vmax] uppercase font-semibold text-primary mb-10'>Who We Are?</h1>
+              <p className='text-[0.9vmax] leading-[30px] font-normal text-justify'>
+                Motion Writer is a cutting-edge digital marketing and advertising agency dedicated to bringing your brand's story to life. We specialize in crafting tailored social media strategies that spark engagement and build loyal communities, while our digital marketing services drive targeted traffic and measurable growth. Our creative design team creates visually stunning assets that capture attention and communicate your brand's unique identity. We also offer innovative web solutions, ensuring your website is both functional and optimized for user experience. From dynamic videos to eye-catching photography, Motion Writer produces content that captivates and converts. With a focus on creativity, strategy, and results, we deliver impactful solutions that help your brand stand out and succeed in the digital world. Let us be the driving force behind your digital transformation.
+              </p>
+            </div>
           </div>
-
-          <p className="font-PrimaryFont text-[20px] leading-[35px] text-textColor text-center font-medium">
-            Motion Writer is a cutting-edge digital marketing and advertising agency dedicated to bringing your brand’s story to life. We specialize in crafting tailored social media strategies that spark engagement and build loyal communities, while our digital marketing services drive targeted traffic and measurable growth. Our creative design team creates visually stunning assets that capture attention and communicate your brand’s unique identity. We also offer innovative web solutions, ensuring your website is both functional and optimized for user experience. From dynamic videos to eye-catching photography, Motion Writer produces content that captivates and converts. With a focus on creativity, strategy, and results, we deliver impactful solutions that help your brand stand out and succeed in the digital world. Let us be the driving force behind your digital transformation.
-          </p>
         </div>
 
         <div>
@@ -137,7 +146,7 @@ function HomePage() {
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center gap-6 mx-[120px] my-16">
+        <div className="grid grid-cols-[1fr_1fr_1fr] mx-[120px] gap-6 my-16">
           {serviceCards.map((item) => (
             <ServiceCard key={item.title} item={item} />
           ))}

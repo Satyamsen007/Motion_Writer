@@ -5,10 +5,11 @@
   transition: color 0.3s ease;
   margin-left: 40px;
   margin-right: 40px;
-  font-size: 20px;
+  width: 10px;
+  height: 10px; 
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #4583B4;
+  color: #F8CB46;
 }

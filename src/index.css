@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 /* Add custom styles here */
+
 @font-face {
   font-family: 'Proxima Nova Regular';
   src: url('./assets/fonts/ProximaNova-Regular.otf') format('opentype');
@@ -16,4 +17,27 @@
 @font-face {
   font-family: 'Cardillac-Regular';
   src: url('./assets/fonts/Cardillac-Regular.ttf') format('opentype');
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4583B4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #35698A; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
 }

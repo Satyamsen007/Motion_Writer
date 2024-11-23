@@ -44,7 +44,7 @@ function Footer() {
             <div>
               <Link className='flex gap-4 mb-5 cursor-pointer'>
                 <img
-                  src="./src/assets/images/digital marketing.png"
+                  src="./src/assets/images/ICON_WHITE/digital marketing.png"
                   alt="Digital Marketing Image"
                   width={30}
                 />
@@ -52,7 +52,7 @@ function Footer() {
               </Link>
               <Link className='flex gap-4 mb-5 cursor-pointer'>
                 <img
-                  src="./src/assets/images/creative designing.png"
+                  src="./src/assets/images/ICON_WHITE/creative designing.png"
                   alt="Creative Designing Image"
                   width={30}
                 />
@@ -60,7 +60,7 @@ function Footer() {
               </Link>
               <Link className='flex gap-4 mb-5 cursor-pointer'>
                 <img
-                  src="./src/assets/images/social.png"
+                  src="./src/assets/images/ICON_WHITE/social.png"
                   alt="Social Image"
                   width={30}
                 />
@@ -71,7 +71,7 @@ function Footer() {
             <div>
               <Link className='flex gap-4 mb-5 cursor-pointer'>
                 <img
-                  src="./src/assets/images/web solution.png"
+                  src="./src/assets/images/ICON_WHITE/web solution.png"
                   alt="Web Solution Image"
                   width={30}
                 />
@@ -79,7 +79,7 @@ function Footer() {
               </Link>
               <Link className='flex gap-4 mb-5 cursor-pointer'>
                 <img
-                  src="./src/assets/images/films.png"
+                  src="./src/assets/images/ICON_WHITE/films.png"
                   alt="FilmsImage"
                   width={30}
                 />
@@ -87,7 +87,7 @@ function Footer() {
               </Link>
               <Link className='flex gap-4 mb-5 cursor-pointer'>
                 <img
-                  src="./src/assets/images/photography.png"
+                  src="./src/assets/images/ICON_WHITE/photography.png"
                   alt="Photography Image"
                   width={30}
                 />
@@ -111,7 +111,7 @@ function Footer() {
               className="flex gap-4 mb-4 font-PrimaryFont text-[1.1vmax] font-medium relative group text-white"
             >
               {icon}
-              <p className="cursor-pointer">{contact}</p>
+              <a href={`${index === 0 ? 'tel:+1234567890' : 'mailto:someone@example.com'}`} className="cursor-pointer">{contact}</a>
             </div>
           ))}
         </div>
